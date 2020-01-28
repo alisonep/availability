@@ -3,7 +3,7 @@ const db = require('./index.js');
 
 const availableDogsSchema = new mongoose.Schema({
   breedKeys: Array,
-  location: Number,
+  location: String,
   imageURL: String,
   name: String
 })

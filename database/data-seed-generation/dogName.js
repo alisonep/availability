@@ -1,0 +1,1 @@
+//use two arrays and put them together (ie: Mister Spot, Prince Spike, etc.)
