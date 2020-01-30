@@ -1,7 +1,7 @@
 //the first digit of zip codes cluster a few states so for now we can just use that first digit to judge distance. 5 digits
         //attempt to get a fair distribution from 0-9 for the first digit
 
-var dogLocation = function(){
+var dogLocation = function() {
 
   var dogLocations = [];
 
