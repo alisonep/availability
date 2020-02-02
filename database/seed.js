@@ -44,7 +44,7 @@ var sampleDogs = generateDogs();
 
 const seedSampleDogs = function() {
   AvailableDogs.insertMany(sampleDogs)
-    .then(() => db.dosconnect());
+    .then(() => db.disconnect());
 }
 
 seedSampleDogs();
