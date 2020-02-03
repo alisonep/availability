@@ -2,12 +2,19 @@ const db = require('./index.js');
 const AvailableDogs = require('./availability.js');
 const generateDogs = require('./data-seed-generation/generateDogs.js');
 
-var sampleDogs = generateDogs();
-// console.log(sampleDogs);
+async function connectDatabase() {
+  var database = await db;
 
-const seedSampleDogs = function() {
-  AvailableDogs.insertMany(sampleDogs)
-    .then(() => db.disconnect());
+  var sampleDogs = generateDogs();
+
+  var seedSampleDogs = function() {
+    AvailableDogs.insertMany(sampleDogs)
+      .then(() => database.disconnect())
+      .catch((err) => {
+        console.log('err:', err)
+      })
+  }
+  seedSampleDogs();
 }
 
-seedSampleDogs();
+connectDatabase()
