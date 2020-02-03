@@ -1,10 +1,10 @@
-const dogBreed = require('./database/data-seed-generation/dogBreed.js');
-const dogLocation= require('./database/data-seed-generation/dogLocation.js');
-const dogImage = require('./database/data-seed-generation/dogImage.js');
-const dogName = require('./database/data-seed-generation/dogName.js');
+const dogBreed = require('../database/data-seed-generation/dogBreed.js');
+const dogLocation= require('../database/data-seed-generation/dogLocation.js');
+const dogImage = require('../database/data-seed-generation/dogImage.js');
+const dogName = require('../database/data-seed-generation/dogName.js');
 
 //integration test
-const generateDogs = require('./database/data-seed-generation/generateDogs.js');
+const generateDogs = require('../database/data-seed-generation/generateDogs.js');
 
 test('dogBreed should output and array of 300 arrays of numbers', () => {
   const breeds = dogBreed();
