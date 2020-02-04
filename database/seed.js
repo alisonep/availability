@@ -17,4 +17,4 @@ async function connectDatabase() {
   seedSampleDogs();
 }
 
-connectDatabase()
+connectDatabase();
