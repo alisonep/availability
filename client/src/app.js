@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import Dogs from './components/dogs.js'
+import Dog from './components/dog.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -37,7 +39,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>{this.state.breedId}s Availabile Nearby</h1>
-        <h3>{Math.max(this.state.dogs.length - 4, 0)} more {this.state.breedId}s available for adoption</h3>
+        <Dogs dogs={this.state.dogs} breedId={this.state.breedId}/>
       </div>
     )
   }
