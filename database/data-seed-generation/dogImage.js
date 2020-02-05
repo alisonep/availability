@@ -6,7 +6,9 @@
 
         for (var i = 0; i < 300; i++) {
             //currently hard coded for the same image but later will change out the 1 for i
-            dogImages.push('http://availabledogphotos.s3.amazonaws.com/'+ 1 + '.jpg')    
+            var number = Math.floor(Math.random() * 30) + 1
+
+            dogImages.push('http://availabledogphotos.s3.amazonaws.com/'+ number + '.jpg')    
         }
 
         return dogImages;

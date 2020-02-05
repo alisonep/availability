@@ -6,8 +6,10 @@ function Dogs(props) {
 
   const dogs = props.dogs;
 
-  const dogList = dogs.map((dog) => {
-    {console.log('dog:', dog)}
+  const refinedDogs = dogs.slice(0,4);
+
+  const dogList = refinedDogs.map((dog) => {
+    {console.log('dog:', dog, 'id: ', dog._id )}
     return <Dog dog={dog} key={dog._id}/>
   })
 

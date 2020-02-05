@@ -1,4 +1,13 @@
 import React from 'react';
+import style from 'styled-components';
+import NameCard from './nameCard.js'
+
+var StyledDiv = style.div`
+  text-align: center;
+  float:left;
+  padding: .5em;
+  color: #6504b5;
+`;
 
 class Dog extends React.Component {
   constructor(props) {
@@ -7,10 +16,13 @@ class Dog extends React.Component {
 
   render() {
     return (
+      <StyledDiv>
       <div>
-        <p>{this.props.dog.name} will go here</p>
+        <img src={this.props.dog.imageURL} height='228' width='228'></img>
+        <NameCard name={this.props.dog.name} />
         {console.log('dogprops:', this.props)}
       </div>
+      </StyledDiv>
     )
   }
 

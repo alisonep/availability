@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import Dogs from './components/dogs.js'
-import Dog from './components/dog.js'
+import Dogs from './components/dogs.js';
+import style from 'styled-components'
+
+const StyledDiv = style.div`
+  width: 90%;
+  margin: auto;
+  color: #6504b5;
+  text-align: center;
+`;
 
 class App extends React.Component {
   constructor(props) {
@@ -38,7 +45,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>{this.state.breedId}s Availabile Nearby</h1>
+        <StyledDiv>
+          <h1>{this.state.breedId}s Availabile Nearby</h1>
+        </StyledDiv>
         <Dogs dogs={this.state.dogs} breedId={this.state.breedId}/>
       </div>
     )
