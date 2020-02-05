@@ -17,8 +17,15 @@ class App extends React.Component {
 
     this.state = {
       breedId: 1,
-      dogs: []
+      dogs: [],
+      location: {
+        on: false,
+        latitude: 0,
+        longitude: 0
+      }
     }
+
+    this.coordinates = this.coordinates.bind(this);
   }
 
   dogFinder() {
@@ -37,9 +44,46 @@ class App extends React.Component {
       if (err) { throw err; }
     })
   }
+
+  getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.coordinates, this.locationError);
+    } else {
+      console.log("Geolocation is not supported by this browser.")
+    }
+  }
+
+  locationError(err) {
+    if (err.PERMISSION_DENIED) {
+      console.log("User denied location request.");
+    } else if (err.POSITION_UNAVAILABLE) {
+      console.log("Location unavailable.");
+    } else if (err.TIMEOUT) {
+      console.log("Location request timed out.");
+    } else if (err.UNKNOWN_ERROR) {
+      console.log("Location request resulted in an unknown error.");
+    } else {
+      console.log('Error: ', err);
+    }
+  }
+
+  coordinates(position) {
+    console.log(position.coords.latitude, '/', position.coords.longitude)
+    console.log('Old state:', this.state)
+    this.setState({
+      location: {
+        on: true,
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude
+      }
+    
+    })
+    console.log('New state:', this.state)
+  }
   
   componentDidMount() {
     this.dogFinder();
+    this.getLocation();
   }
 
   render() {
