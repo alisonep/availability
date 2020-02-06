@@ -11,7 +11,7 @@ test('dogBreed should output and array of 300 arrays of numbers', () => {
   expect(breeds).toHaveLength(300);
 
   breeds.forEach((aDogsBreeds) => {
-    expect(aDogsBreeds).toHaveLength(3);
+    expect(aDogsBreeds).toHaveLength(7);
     
     aDogsBreeds.forEach((breed) => {
       expect(typeof breed).toBe('number')
@@ -20,7 +20,7 @@ test('dogBreed should output and array of 300 arrays of numbers', () => {
 
 })
 
-test('dogLocation should output and array of 300 strings of 5 numbers', () => {
+test('dogLocation should output and array of 300 strings of latitude and longitude', () => {
   const locations = dogLocation();
   expect(locations).toHaveLength(300);
 

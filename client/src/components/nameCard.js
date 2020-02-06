@@ -8,7 +8,19 @@ var StyledDiv = style.div`
 `;
 
 function NameCard(props) {
-  
+  if(props.dist) {
+    return (
+      <StyledDiv>
+      <br></br>
+      <div>
+        {props.name}
+        <br></br>
+        {Math.floor(props.dist)} Miles Away
+      </div>
+      <br></br>
+      </StyledDiv>
+    )
+  } else {
     return (
       <StyledDiv>
       <br></br>
@@ -18,6 +30,8 @@ function NameCard(props) {
       <br></br>
       </StyledDiv>
     )
+  }
+    
 
 }
 

@@ -92,7 +92,7 @@ class App extends React.Component {
         <StyledDiv>
           <h1>{this.state.breedId}s Availabile Nearby</h1>
         </StyledDiv>
-        <Dogs dogs={this.state.dogs} breedId={this.state.breedId}/>
+        <Dogs dogs={this.state.dogs} breedId={this.state.breedId} location={this.state.location}/>
       </div>
     )
   }
