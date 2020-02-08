@@ -24,14 +24,15 @@ test('dogLocation should output and array of 300 strings of latitude and longitu
   const locations = dogLocation();
   expect(locations).toHaveLength(300);
 
-  locations.forEach((location) => {
-    var firstStringValue = location[0];
-    var firstNumber = Number(firstStringValue);
-    expect(typeof firstNumber).toBe('number');
-    expect(location).toHaveLength(5);
-    var string = firstNumber+'1111'
-    expect(location).toMatch(new RegExp(`${string}`));
-  })
+  //Needs to be redone for latitude and longitude instead of zip codes
+  // locations.forEach((location) => {
+  //   var firstStringValue = location[0];
+  //   var firstNumber = Number(firstStringValue);
+  //   expect(typeof firstNumber).toBe('number');
+  //   expect(location).toHaveLength(5);
+  //   var string = firstNumber+'1111'
+  //   expect(location).toMatch(new RegExp(`${string}`));
+  // })
 })
 
 test('dogImage should output and array of 300 strings of urls that end in a number', () => {
@@ -64,7 +65,7 @@ test('generateDogs should contain an array of 300 objects that have a breedKeys 
   dogs.forEach((dog) => {
     expect(dog).toHaveProperty('breedKeys');
     expect(Array.isArray(dog.breedKeys)).toBe(true)
-    expect(dog.breedKeys).toHaveLength(3);
+    expect(dog.breedKeys).toHaveLength(7);
     expect(dog).toHaveProperty('location')
     expect(typeof dog.location).toBe('string');
     expect(dog).toHaveProperty('imageURL')
