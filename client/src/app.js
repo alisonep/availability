@@ -29,7 +29,7 @@ class App extends React.Component {
   }
 
   dogFinder() {
-    axios.get('/getAllMatchingBreed', {
+    axios.get('http://localhost:3003/getAllMatchingBreed', {
       params: {
         key: this.state.breedId
       }
